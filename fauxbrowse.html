@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=UTF-8>
+  <title>Fauxbrowse</title>
+<link rel=stylesheet href=fauxbrowse.css>
+</head>
+<body>
+ 
+<main>
+
+  <section id=editor>
+    <header class=window-header>
+      <h1>Text Editor — <code>phrase.html</code></h1>
+    </header>
+
+    <nav>
+      <ul id=menu>
+        <li><u>F</u>ile</li>
+        <li><u>E</u>dit</li>
+        <li><u>F</u>ormat</li>
+        <li><u>V</u>iew</li>
+        <li><u>H</u>elp</li>
+      </ul>
+    </nav>
+    <textarea spellcheck=false>
+<!doctype html>
+<title>A Phrase in Mixtec</title>
+
+<body>
+
+<p>
+  <strong>
+    Ña tyaa San Martín Peras.
+  </strong>
+</p>
+
+<p>
+  I am a man from San Martín Peras.
+</p>
+
+<audio controls src=phrase.wav>
+
+</body>
+
+    </textarea> 
+  </section>
+  
+  <section id=browser>
+    <header id=chrome class=window-header>
+      <h1>Web Browser — <code>phrase.html</code></h1>
+
+       <ol id=tabs>
+         <li class=tab><p>A Phrase in Mixtec</p></li>
+       </ol>
+
+       <div id=bar>
+         <input id=url value=file:///Users/pat/phrase.html>
+         <button>⟳</button>
+       </div>
+
+     </header>
+     <div id=body>
+     </div>
+  </section>
+
+</main>
+
+
+<script>
+
+var 
+  markup = document.querySelector('#editor textarea'),
+  fauxBody = document.querySelector('#body');
+
+var bodyOnly = doc => {
+  doc = doc
+   .replace('<body>', '<div id=body>')
+   .replace('</body>', '</div>');
+
+  var div = document.createElement('div');
+  div.insertAdjacentHTML('afterbegin', doc);
+  var html = div.querySelector('#body').innerHTML;
+  return html
+}
+  
+
+var render = () => fauxBody.innerHTML = bodyOnly(markup.value);
+render();
+markup.addEventListener('keyup', render);
+
+
+</script>
+</body>
+</html>

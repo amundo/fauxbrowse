@@ -1,0 +1,184 @@
+* {
+  box-sizing:border-box;
+}
+
+body {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow:1;
+  min-height: 70vh;
+  flex-basis: 60vh;
+  flex-grow: 1;
+
+  padding: 1em;
+  display:flex;
+}
+
+#editor { 
+  flex:1;
+  font: menu;
+  padding:0;
+  margin: 0 1em;
+  display:flex;
+  flex-direction:column;
+  border: 1px solid #AFAFAF;
+  border-radius: 10px;
+  box-shadow: -2px 2px 4px #ccc;
+  margin-right: 4em;
+}
+
+.window-header {
+  background-image: linear-gradient(#efefef,#DCDCDC );
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+  display:flex;
+  align-items: baseline;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.window-header  h1 { 
+  flex:1;
+  color: #666;
+
+  text-shadow: -1px 1px 1px #eee;
+  text-align:center;
+
+}
+
+#editor nav ul  { 
+  flex-basis:100%;
+  background:white;
+  list-style:none;
+
+  margin:0;
+  padding:0;;
+  border-bottom: 1px solid gray;
+  
+ 
+  display:flex;
+  
+  align-items: center;
+}
+
+#editor nav ul li { 
+  padding:0 1em;
+  text-align:center;
+
+  display:flex;
+}
+
+#editor textarea {
+  flex:1;
+  font-family: Courier;
+  padding: 1em;
+  border:none;
+  margin: 1em;
+}
+  
+
+#browser { 
+  font:menu; 
+
+  margin-top: -2em;
+  margin-bottom: 2em;
+
+  flex:1;
+  border: 1px solid #AFAFAF;
+  border-radius: 10px;
+  box-shadow: -8px 8px 4px #dedede;
+  background-image: linear-gradient(#efefef, #eee);
+
+  padding:0;
+  display:flex;
+  flex-direction:column;
+}
+
+#browser #chrome { 
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-image: linear-gradient(#eee, #fff);
+
+  display:flex;
+}
+
+#browser #chrome #tabs { 
+  padding: 0 0 0 1em;
+  margin:0;
+  list-style:none;
+  border-bottom: 1px solid #ccc; 
+  width:100%;
+
+  display:flex;
+  align-items: flex-end;
+}
+
+#browser #chrome #tabs .tab { 
+  border-top: 1px solid #ccc; 
+  border-right: 1px solid #ccc; 
+  border-left: 1px solid #ccc; 
+  border-top-left-radius: 5px; 
+  border-top-right-radius: 5px; 
+  background-image: linear-gradient(#fff, #eee);
+
+  padding:0 .5em;
+  margin:0 0 -1px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#browser #chrome #tabs .tab button { 
+  margin-left: .5em;
+}
+
+#browser #chrome #bar {
+  flex:1; 
+  border-radius: 5px;
+  margin: 0 1em;
+
+  display:flex;
+}
+
+
+#browser #chrome input#url {
+  flex:1;
+  border:none;
+  padding: 0 1em;
+
+}
+
+#browser #chrome button {
+ width:1em;
+  border:none;;
+  font-size:150%;
+  background:none;
+  border-left: 2px solid gray ;
+  margin: .2em .25em .25em 1em;
+}
+
+#browser #body { 
+  flex-grow:1;
+  background:white;
+  padding: .5em;
+  margin-top: 1em;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#menu { 
+  line-height: 1;
+}
+
+#menu u { 
+  text-decoration:none;
+  border-bottom: 1px solid black;
+  margin: 0 0 .2em 0 ;
+}
